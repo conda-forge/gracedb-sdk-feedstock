@@ -20,12 +20,16 @@ requirements:
     - python >=3.6
     - setuptools
   run:
-    - ligo-requests
     - python >=3.6
+    - requests-gracedb
 
 test:
   imports:
     - gracedb_sdk
+  requires:
+    - pytest
+  commands:
+    - python -m pytest --pyargs gracedb_sdk
 
 about:
   home: "https://git.ligo.org/emfollow/gracedb-sdk"
