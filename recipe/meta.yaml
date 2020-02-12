@@ -1,5 +1,5 @@
 {% set name = "gracedb-sdk" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz"
-  sha256: a2ef96c700cdcab3d857fed5f05649ffbfeab6d821a18d0bd327834e03d8d737
+  sha256: 7c10b9cc28b6db5955cf4e2c726ac66b84d43a809eb05dd8d8130ce630173948
 
 build:
   noarch: "python"
