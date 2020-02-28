@@ -3,7 +3,7 @@ About gracedb-sdk
 
 Home: https://git.ligo.org/emfollow/gracedb-sdk
 
-Package license: GPL-2.0-or-later
+Package license: GPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
