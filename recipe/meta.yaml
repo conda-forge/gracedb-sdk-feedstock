@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --ignore-installed -vv '
 
 requirements:
@@ -35,7 +35,7 @@ about:
   home: https://git.ligo.org/emfollow/gracedb-sdk
   doc_url: https://gracedb-sdk.readthedocs.io/
   dev_url: https://git.ligo.org/emfollow/gracedb-sdk
-  license: GPL-2.0-or-later
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.md
   summary: REST API SDK for GraceDB
