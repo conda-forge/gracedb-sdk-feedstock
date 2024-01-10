@@ -11,14 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script: '{{ PYTHON }} -m pip install . --ignore-installed -vv '
+  number: 1
+  script: {{ PYTHON }} -m pip install . --ignore-installed -vv
 
 requirements:
   host:
     - pip
     - python >=3.6
     - setuptools
+    - setuptools-scm
   run:
     - python >=3.6
     - requests-gracedb
@@ -27,8 +28,11 @@ test:
   imports:
     - gracedb_sdk
   requires:
+    - pip
     - pytest
   commands:
+    - python -m pip check
+    - python -m pip show gracedb-sdk
     - python -m pytest --pyargs gracedb_sdk
 
 about:
