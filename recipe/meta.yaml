@@ -1,17 +1,17 @@
 {% set name = "gracedb-sdk" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a8fcc8f57fd88d4838633346f817f846c726ab297fd8650e3cb17d630de732a3
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 877680ad79b91b85eb291da7a5c31cd2eb1000c9659c9dfd87dbf8a01e092028
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --ignore-installed -vv
 
 requirements:
@@ -31,10 +31,12 @@ test:
     - pip
     - pytest
     - python {{ python_min }}
+  source_files:
+    - tests
   commands:
     - python -m pip check
     - python -m pip show gracedb-sdk
-    - python -m pytest --pyargs gracedb_sdk
+    - python -m pytest tests
 
 about:
   home: https://git.ligo.org/emfollow/gracedb-sdk
