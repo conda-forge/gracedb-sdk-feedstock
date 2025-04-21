@@ -31,10 +31,12 @@ test:
     - pip
     - pytest
     - python {{ python_min }}
+  source_files:
+    - tests
   commands:
     - python -m pip check
     - python -m pip show gracedb-sdk
-    - python -m pytest --pyargs gracedb_sdk
+    - python -m pytest tests
 
 about:
   home: https://git.ligo.org/emfollow/gracedb-sdk
